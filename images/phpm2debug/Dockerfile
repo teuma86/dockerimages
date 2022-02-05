@@ -5,7 +5,7 @@ USER root
 
 RUN apt update
 
-RUN apt install php-xdebug3 -y
+RUN apt-get install php7.4-xdebug -y
 
 # RUN set -eux \
 #     && apt-get install -y php-pecl-xdebug 
