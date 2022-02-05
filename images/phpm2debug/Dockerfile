@@ -4,11 +4,11 @@ FROM teuma86/php-fpm-m2:${PHP_TAG}
 USER root
 
 RUN set -eux \
-    && dnf install -y php-pecl-xdebug3 \
-    && dnf clean all \
-    && rm -rf /var/cache/dnf
+    && apt-get install -y php-pecl-xdebug 
+    #&& apt- clean all \
+    #&& rm -rf /var/cache/dnf
 
-COPY xdebug3/etc/*.ini /etc/
-COPY xdebug3/etc/php.d/*.ini /etc/php.d/
+COPY etc/*.ini /etc/
+COPY etc/php.d/*.ini /etc/php.d/
 
 USER www-data
