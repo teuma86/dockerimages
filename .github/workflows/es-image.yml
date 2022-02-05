@@ -1,11 +1,12 @@
 name: Elasticsearch
 
-on: workflow_dispatch:
-  inputs:
-    esversion:
-      description: "Elastic Search Version"
-      default: 7.9.1
-      required: true
+on:
+  workflow_dispatch:
+    inputs:
+      esversion:
+        description: "Elastic Search Version"
+        default: 7.9.1
+        required: true
 
 jobs:
   docker:
