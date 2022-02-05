@@ -3,7 +3,9 @@ FROM teuma86/php-fpm-m2:${PHP_TAG}
 
 USER root
 
-RUN apt -get install php-xdebug
+RUN apt update
+
+RUN apt install php-xdebug3 -y
 
 # RUN set -eux \
 #     && apt-get install -y php-pecl-xdebug 
