@@ -5,11 +5,11 @@ on:
     inputs:
       phpversion:
         description: "PHP Version"
-        default: 7.4.23-fpm-bullseye
+        default: 7.2.34-fpm-buster
         required: true
       endtag:
         description: "Tag"
-        default: 7.4
+        default: 7.2
         required: true
 jobs:
   docker:

@@ -66,13 +66,14 @@ RUN set -eux; \
 # https://github.com/php/php-src/blob/17baa87faddc2550def3ae7314236826bc1b1398/sapi/fpm/php-fpm.8.in#L163
 STOPSIGNAL SIGQUIT
 
+
 ## Warden
 RUN apt update
-
-RUN apt install -y pv sudo bind9-utils python3-pip bash-completion rsync socat oathtool \
+# bind9-utils python3-pip
+RUN apt install -y pv sudo bash-completion rsync socat oathtool \
         wget ack automake autoconf nano vim cron mariadb-server
 
-RUN apt install -y python2 && ln -s /usr/bin/python2 /usr/bin/python
+# RUN apt install -y python2 && ln -s /usr/bin/python2 /usr/bin/python
 
 ENV NODE_VERSION    10
 RUN npm install -g n \
@@ -99,7 +100,7 @@ RUN mkdir -p /tmp/mhsendmail \
     && mv mhsendmail_linux_$TARGETARCH /usr/local/bin/mhsendmail
 
 # Install awscli to support data backfill workflows using S3 storage; segno for QR code generation
-RUN pip3 install awscli segno --no-cache-dir
+# RUN pip3 install awscli segno --no-cache-dir
 
 # Configure www-data user as primary php-fpm user for better local dev experience
 RUN chmod 0755 ~www-data \
