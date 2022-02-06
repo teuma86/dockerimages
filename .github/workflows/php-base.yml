@@ -1,4 +1,4 @@
-name: php-fpm
+name: php-base
 
 on:
   workflow_dispatch:
