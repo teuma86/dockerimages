@@ -5,7 +5,7 @@ on:
     inputs:
       phpversion:
         description: "PHP Version"
-        default: 7.4
+        default: 7.2
         required: true
 
 jobs:
