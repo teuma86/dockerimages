@@ -5,10 +5,6 @@ on:
     inputs:
       phpversion:
         description: "PHP Version"
-        default: 7.4.23-fpm-bullseye
-        required: true
-      endtag:
-        description: "Tag"
         default: 7.4
         required: true
 jobs:
@@ -46,8 +42,8 @@ jobs:
           push: true
           build-args: PHP_TAG=${{ github.event.inputs.phpversion }}
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/php-fpm:${{ github.event.inputs.endtag }}
-            ghcr.io/${{ github.repository_owner }}/php-fpm:${{ github.event.inputs.endtag }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/php-fpm:${{ github.event.inputs.phpversion }}
+            ghcr.io/${{ github.repository_owner }}/php-fpm:${{ github.event.inputs.phpversion }}
 
       -
         name: Build and push loaders
@@ -56,7 +52,7 @@ jobs:
           context: images/phpbase-loaders
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: PHP_TAG=${{ github.event.inputs.endtag }}
+          build-args: PHP_TAG=${{ github.event.inputs.phpversion }}
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/php-fpm-loaders:${{ github.event.inputs.endtag }}
-            ghcr.io/${{ github.repository_owner }}/php-fpm-loaders:${{ github.event.inputs.endtag }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/php-fpm-loaders:${{ github.event.inputs.phpversion }}
+            ghcr.io/${{ github.repository_owner }}/php-fpm-loaders:${{ github.event.inputs.phpversion }}
