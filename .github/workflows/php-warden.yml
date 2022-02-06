@@ -7,7 +7,7 @@ on:
         description: "PHP Version"
         default: 7.4
         required: true
-       with-loaders:
+      with-loaders:
         description: "Enter '-loaders' to build with PHP loaders"
         required: false
 jobs:
