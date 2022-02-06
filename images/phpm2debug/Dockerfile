@@ -3,16 +3,12 @@ FROM teuma86/php-fpm-m2:${PHP_TAG}
 
 USER root
 
-RUN apt update
+RUN install-php-extensions xdebug xsl sockets
 
-RUN apt-get install php7.4-xdebug -y
+COPY xdebug3/etc/*.ini /etc/
+COPY xdebug3/etc/xdebug-config /usr/local/etc/php/conf.d/xdebug-config
 
-# RUN set -eux \
-#     && apt-get install -y php-pecl-xdebug 
-#     #&& apt- clean all \
-#     #&& rm -rf /var/cache/dnf
-
-COPY etc/*.ini /etc/
-COPY etc/php.d/*.ini /etc/php.d/
+RUN cat /usr/local/etc/php/conf.d/xdebug-config >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && rm /usr/local/etc/php/conf.d/xdebug-config
 
 USER www-data
