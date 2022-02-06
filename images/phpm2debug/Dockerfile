@@ -5,8 +5,8 @@ USER root
 
 RUN install-php-extensions xdebug xsl sockets
 
-COPY xdebug3/etc/*.ini /etc/
-COPY xdebug3/etc/xdebug-config /usr/local/etc/php/conf.d/xdebug-config
+COPY etc/*.ini /etc/
+COPY etc/xdebug-config /usr/local/etc/php/conf.d/xdebug-config
 
 RUN cat /usr/local/etc/php/conf.d/xdebug-config >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && rm /usr/local/etc/php/conf.d/xdebug-config
