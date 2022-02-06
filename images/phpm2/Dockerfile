@@ -1,5 +1,5 @@
 ARG PHP_TAG
-FROM teuma86/php-fpm:${PHP_TAG}
+FROM teuma86/php-warden:${PHP_TAG}
 
 USER root
 
