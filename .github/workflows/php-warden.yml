@@ -40,8 +40,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          file: images/php-warden/Dockerfile
-          context: images/php-warden/context
+          context: images/php-warden
           platforms: linux/amd64,linux/arm64
           push: true
           build-args: |
