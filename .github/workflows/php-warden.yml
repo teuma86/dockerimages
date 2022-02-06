@@ -7,6 +7,9 @@ on:
         description: "PHP Version"
         default: 7.4
         required: true
+       with-loaders:
+        description: "Enter '-loaders' to build with PHP loaders"
+        required: false
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -40,7 +43,9 @@ jobs:
           context: images/php-warden
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: PHP_TAG=${{ github.event.inputs.phpversion }}
+          build-args: |
+            PHP_TAG=${{ github.event.inputs.phpversion }}
+            WITH_LOADERS=${{ github.event.inputs.with-loaders }}
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/php-warden:${{ github.event.inputs.endtag }}
             ghcr.io/${{ github.repository_owner }}/php-warden:${{ github.event.inputs.endtag }}
