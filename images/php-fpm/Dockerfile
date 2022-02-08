@@ -12,11 +12,9 @@ ENV MAILHOG_PORT    1025
 
 RUN apt update
 
-RUN apt install -y pv sudo bash-completion rsync socat oathtool \
+RUN apt install -y pv sudo bind9-utils python3-pip bash-completion rsync socat oathtool \
         wget ack automake autoconf nano vim cron mariadb-server
 
-# Removed for php 7.2 // TODO look at
-# bind9-utils python3-pip
 
 RUN apt install -y python2 && ln -s /usr/bin/python2 /usr/bin/python
 
