@@ -10,13 +10,13 @@ ENV COMPOSER_HOME=
 ENV MAILHOG_HOST    mailhog
 ENV MAILHOG_PORT    1025
 
-RUN apt update
+RUN apt-get update
 
-RUN apt install -y pv sudo bind9-utils python3-pip bash-completion rsync socat oathtool \
+RUN apt-get install -y pv sudo bind9-utils python3-pip bash-completion rsync socat oathtool \
         wget ack automake autoconf nano vim cron mariadb-server
 
 
-RUN apt install -y python2 && ln -s /usr/bin/python2 /usr/bin/python
+RUN apt-get install -y python2 && ln -s /usr/bin/python2 /usr/bin/python
 
 ENV NODE_VERSION    10
 RUN npm install -g n \
