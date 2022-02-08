@@ -1,4 +1,4 @@
-FROM teuma86/warden-php-m2
+FROM teuma86/php-fpm-m2
 
 USER root
 
