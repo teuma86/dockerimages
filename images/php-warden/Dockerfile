@@ -1,7 +1,8 @@
 ARG PHP_TAG
 ARG WITH_LOADERS
 
-FROM teuma86/php-fpm${WITH_LOADERS}:${PHP_TAG}
+FROM ghcr.io/drpayyne/php-fpm${WITH_LOADERS}:${PHP_TAG}
+# FROM teuma86/php-fpm${WITH_LOADERS}:${PHP_TAG}
 
 # Clear undesired settings from base fpm images
 ENV COMPOSER_ALLOW_SUPERUSER=
