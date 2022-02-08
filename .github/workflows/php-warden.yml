@@ -40,12 +40,13 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: images/php-warden
+          file: images/php-fpm/Dockerfile
+          context: images/php-fpm/context
           platforms: linux/amd64,linux/arm64
           push: true
           build-args: |
             PHP_TAG=${{ github.event.inputs.phpversion }}
             WITH_LOADERS=${{ github.event.inputs.with-loaders }}
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/php-warden:${{ github.event.inputs.phpversion }}
-            ghcr.io/${{ github.repository_owner }}/php-warden:${{ github.event.inputs.phpversion }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/warden-php:${{ github.event.inputs.phpversion }}
+            ghcr.io/${{ github.repository_owner }}/warden-php:${{ github.event.inputs.phpversion }}

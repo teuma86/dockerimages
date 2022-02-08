@@ -38,7 +38,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: images/phpm2debug
+          file: images/php-fpm/magento2/xdebug3/Dockerfile
+          context: images/php-fpm/context
           platforms: linux/amd64,linux/arm64
           push: true
           build-args: PHP_TAG=${{ github.event.inputs.phpversion }}
