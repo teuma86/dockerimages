@@ -1,5 +1,5 @@
 ARG PHP_TAG
-FROM ghcr.io/drpayyne/warden-php:${PHP_TAG}
+FROM teuma86/warden-php:${PHP_TAG}
 
 USER root
 
