@@ -17,7 +17,7 @@ RUN apt-get install -y pv sudo bash-completion rsync socat oathtool \
 
 # bind9-utils python3-pip 
 
-RUN apt-get install -y python2 && ln -s /usr/bin/python2 /usr/bin/python
+RUN apt-get install -y python2 && ln -s /bin/python2 /bin/python
 
 ENV NODE_VERSION    10
 RUN npm install -g n \
