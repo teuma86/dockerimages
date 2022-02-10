@@ -12,9 +12,10 @@ ENV MAILHOG_PORT    1025
 
 RUN apt-get update -y
 
-RUN apt-get install -y pv sudo bind9-utils python3-pip bash-completion rsync socat oathtool \
+RUN apt-get install -y pv sudo bash-completion rsync socat oathtool \
         wget ack automake autoconf nano vim cron mariadb-server
 
+# bind9-utils python3-pip 
 
 RUN apt-get install -y python2 && ln -s /usr/bin/python2 /usr/bin/python
 
