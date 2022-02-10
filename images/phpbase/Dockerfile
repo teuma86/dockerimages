@@ -3,8 +3,7 @@ FROM php:${PHP_TAG}
 
 # Refresh apt
 RUN set -eux \
-    && apt update -y \
-    && apt upgrade -y
+    && apt-get update -y 
 
 # Install PHP extension installer
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
@@ -15,8 +14,8 @@ ARG PHP_EXTENSIONS="amqp bcmath gd gmp imagick intl msgpack opcache pdo_mysql re
 # Install PHP extensions and other utilities
 RUN chmod +x /usr/local/bin/install-php-extensions && sync \
 	&& install-php-extensions ${PHP_EXTENSIONS} \
-	&& apt update -y \
-	&& apt install -y git npm gettext unzip pwgen nmap ncat jq
+	&& apt-get update -y \
+	&& apt-get install -y git npm gettext unzip pwgen nmap ncat jq
 
 # Set primary INI file and PHP memory limit
 RUN set -eux \

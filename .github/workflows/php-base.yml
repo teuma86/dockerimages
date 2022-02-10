@@ -5,7 +5,7 @@ on:
     inputs:
       from:
         description: "Base PHP Version"
-        default: "php:7.4-fpm-buster"
+        default: "7.4.23-fpm-bullseye"
         required: true
       phpversion:
         description: "PHP Version"
