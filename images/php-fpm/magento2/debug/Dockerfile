@@ -10,6 +10,6 @@ RUN install-php-extensions xdebug-2.9.8 xsl sockets
 #     && rm -rf /var/cache/dnf
 
 COPY debug/etc/*.ini /etc/
-COPY debug/etc/php.d/*.ini /etc/php.d/
+COPY debug/etc/php.d/*.ini /usr/local/etc/php/conf.d/xdebug-config
 
 USER www-data
