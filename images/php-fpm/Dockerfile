@@ -56,5 +56,3 @@ RUN chmod 0755 ~www-data \
 
 WORKDIR /var/www/html
 USER www-data
-
-CMD bash -c "composer1 global require hirak/prestissimo"
