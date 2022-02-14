@@ -31,5 +31,3 @@ RUN npm install -g grunt-cli gulp yarn
 RUN ln -s /usr/local/bin/n98-magerun /usr/local/bin/mr
 
 USER www-data
-
-RUN composer1 global require hirak/prestissimo
