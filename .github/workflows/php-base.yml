@@ -5,11 +5,11 @@ on:
     inputs:
       from:
         description: "Base PHP Version"
-        default: "7.4.23-fpm-bullseye"
+        default: "7.0.33-fpm-jessie"
         required: true
       phpversion:
         description: "PHP Version"
-        default: 7.4
+        default: 7.0
         required: true
 jobs:
   docker:
