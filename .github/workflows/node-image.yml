@@ -7,6 +7,10 @@ on:
         description: "Node Version Name"
         default: 10-alpine
         required: true
+      tag:
+        description: "Tag Name"
+        default: 10
+        required: true
 
 jobs:
   docker:
@@ -41,7 +45,7 @@ jobs:
           context: images/basenode
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: ES_VERSION=${{ github.event.inputs.esversion }}
+          build-args: NODE_VERSION=${{ github.event.inputs.node_version }}
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/basenode:${{ github.event.inputs.esversion }}
-            ghcr.io/${{ github.repository_owner }}/basenode:${{ github.event.inputs.esversion }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/basenode:${{ github.event.inputs.tag }}
+            ghcr.io/${{ github.repository_owner }}/basenode:${{ github.event.inputs.tag }}
