@@ -13,7 +13,7 @@ ENV MAILHOG_PORT    1025
 RUN apt-get update -y
 
 RUN apt-get install -y pv sudo bash-completion rsync socat oathtool \
-        wget  automake autoconf nano vim cron mariadb-serve3r
+        wget  automake autoconf nano vim cron mariadb-server
 #ack
 # bind9-utils python3-pip 
 
