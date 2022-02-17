@@ -2,7 +2,7 @@ ARG PHP_TAG
 FROM teuma86/warden-php-m2:${PHP_TAG}
 
 USER root
-RUN install-php-extensions xdebug-2.9.8 xsl sockets
+RUN install-php-extensions xdebug-2.7 xsl sockets
 
 # RUN set -eux \
 #     && dnf install -y php-pecl-xdebug \
