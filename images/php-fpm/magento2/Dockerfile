@@ -3,7 +3,7 @@ FROM teuma86/warden-php:${PHP_TAG}
 
 USER root
 
-RUN install-php-extensions xsl sockets
+RUN install-php-extensions xsl sockets mcrypt 
 
 RUN npm install -g grunt-cli gulp yarn
 
