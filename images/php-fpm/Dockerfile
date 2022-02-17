@@ -12,8 +12,12 @@ ENV MAILHOG_PORT    1025
 
 RUN apt-get update -y
 
+# RUN export DEBIAN_FRONTEND="noninteractive"
+#sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password password $PASSWORD"
+# sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password_again password $PASSWORD" 
+
 RUN apt-get install -y pv sudo bash-completion rsync socat oathtool \
-        wget  automake autoconf nano vim cron mariadb-server
+        wget automake autoconf nano vim cron mariadb-client
 #ack
 # bind9-utils python3-pip 
 
