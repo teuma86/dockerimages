@@ -44,4 +44,6 @@ jobs:
           build-args: ES_VERSION=${{ github.event.inputs.esversion }}
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/elasticsearch:${{ github.event.inputs.esversion }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/elasticsearch:latest
             ghcr.io/${{ github.repository_owner }}/elasticsearch:${{ github.event.inputs.esversion }}
+            ghcr.io/${{ github.repository_owner }}/elasticsearch:latest
