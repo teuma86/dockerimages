@@ -1,4 +1,4 @@
-name: Elasticsearch
+name: Elasticsearch-From-Source
 
 on:
   workflow_dispatch:
