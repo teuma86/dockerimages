@@ -51,7 +51,7 @@ RUN apk add --no-cache -t .build-deps wget ca-certificates gnupg openssl \
 
 COPY config/elastic /usr/share/elasticsearch/config
 COPY config/logrotate /etc/logrotate.d/elasticsearch
-COPY elastic-entrypoint.sh /usr/local/bin/
+COPY elastic-entrypoint.sh /usr/share/elasticsearch/
 COPY docker-healthcheck /usr/local/bin/
 
 WORKDIR /usr/share/elasticsearch
