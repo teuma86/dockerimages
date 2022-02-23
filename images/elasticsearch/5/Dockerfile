@@ -1,17 +1,18 @@
-ARG VERSION
+#ARG ES_VERSION
 
 FROM alpine:3.8
 
+#ENV VERSION=6.5.4
+ENV VERSION=5.6.11
 RUN apk add --no-cache openjdk8-jre su-exec
 
 ENV DOWNLOAD_URL "https://artifacts.elastic.co/downloads/elasticsearch"
-ENV ES_TARBAL "${DOWNLOAD_URL}/elasticsearch-oss-${VERSION}.tar.gz"
-ENV ES_TARBALL_ASC "${DOWNLOAD_URL}/elasticsearch-oss-${VERSION}.tar.gz.asc"
-ENV EXPECTED_SHA_URL "${DOWNLOAD_URL}/elasticsearch-oss-${VERSION}.tar.gz.sha512"
-ENV ES_TARBALL_SHA "1835aa2862104d328deb5bfcdbbab5d121cd8dff883b7f56f14cc4dadb88c7560b688ac21fb51e0d086b6ed07e0345f26de91c2887253b40abf23c4d5e37e197"
+ENV ES_TARBAL "${DOWNLOAD_URL}/elasticsearch-${VERSION}.tar.gz"
+ENV ES_TARBALL_ASC "${DOWNLOAD_URL}/elasticsearch-${VERSION}.tar.gz.asc"
+ENV EXPECTED_SHA_URL "${DOWNLOAD_URL}/elasticsearch-${VERSION}.tar.gz.sha512"
+ENV ES_TARBALL_SHA "cc0ec89889e23d7aa3e03a2bb76bf6bb40b3084a8a13da99851c4770533048283d36b4c13322b4689480914e5e57c4c998d4abba44d8caa44ffdb21edb207a9c"
 ENV GPG_KEY "46095ACC8548582C1A2699A9D27D666CD88E42B4"
-# https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-6.3.0.zip
-
+# https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-5.6.11.zip
 RUN apk add --no-cache bash
 RUN apk add --no-cache -t .build-deps wget ca-certificates gnupg openssl \
   && set -ex \
